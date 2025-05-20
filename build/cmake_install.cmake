@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/bielk/Desktop/PGCCHIB-main
+# Install script for directory: D:/Processamento_grafico/Processamento_grafico
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -39,15 +39,15 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/bielk/Desktop/PGCCHIB-main/build/_deps/glfw-build/cmake_install.cmake")
-  include("C:/Users/bielk/Desktop/PGCCHIB-main/build/_deps/glm-build/cmake_install.cmake")
+  include("D:/Processamento_grafico/Processamento_grafico/build/_deps/glfw-build/cmake_install.cmake")
+  include("D:/Processamento_grafico/Processamento_grafico/build/_deps/glm-build/cmake_install.cmake")
 
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "C:/Users/bielk/Desktop/PGCCHIB-main/build/install_local_manifest.txt"
+  file(WRITE "D:/Processamento_grafico/Processamento_grafico/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -63,6 +63,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "C:/Users/bielk/Desktop/PGCCHIB-main/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "D:/Processamento_grafico/Processamento_grafico/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

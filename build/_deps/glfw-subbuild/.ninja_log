@@ -1,0 +1,21 @@
+# ninja log v6
+2	78	7694818404305083	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-mkdir	a1462bcf2883a22f
+2	78	7694818404305083	D:/Processamento_grafico/Processamento_grafico/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-mkdir	a1462bcf2883a22f
+78	11438	7694818517930538	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-download	b6bf1cd5243b6453
+78	11438	7694818517930538	D:/Processamento_grafico/Processamento_grafico/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-download	b6bf1cd5243b6453
+11438	11726	7694818518046963	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-update	d63e915235c99db
+11438	11726	7694818518046963	D:/Processamento_grafico/Processamento_grafico/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-update	d63e915235c99db
+11727	11856	7694818522079712	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-patch	db3bca7bf53f047c
+11727	11856	7694818522079712	D:/Processamento_grafico/Processamento_grafico/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-patch	db3bca7bf53f047c
+11856	11959	7694818523130773	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-configure	54b5db0e556e95a7
+11856	11959	7694818523130773	D:/Processamento_grafico/Processamento_grafico/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-configure	54b5db0e556e95a7
+11959	12059	7694818524130554	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-build	7efeb9a9eb879285
+11959	12059	7694818524130554	D:/Processamento_grafico/Processamento_grafico/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-build	7efeb9a9eb879285
+12059	12153	7694818525099352	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-install	7e10fbde00fc8cda
+12059	12153	7694818525099352	D:/Processamento_grafico/Processamento_grafico/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-install	7e10fbde00fc8cda
+12154	12239	7694818525957069	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-test	4aa3a7954f455797
+12154	12239	7694818525957069	D:/Processamento_grafico/Processamento_grafico/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-test	4aa3a7954f455797
+12239	12386	7694818527382834	CMakeFiles/glfw-populate-complete	60527db5a17e18a5
+12239	12386	7694818527382834	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-done	60527db5a17e18a5
+12239	12386	7694818527382834	D:/Processamento_grafico/Processamento_grafico/build/_deps/glfw-subbuild/CMakeFiles/glfw-populate-complete	60527db5a17e18a5
+12239	12386	7694818527382834	D:/Processamento_grafico/Processamento_grafico/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-done	60527db5a17e18a5

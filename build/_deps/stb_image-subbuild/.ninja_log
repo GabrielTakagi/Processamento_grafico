@@ -1,0 +1,21 @@
+# ninja log v6
+3	103	7694818829049924	stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-mkdir	1a7e7b4f58b31820
+3	103	7694818829049924	D:/Processamento_grafico/Processamento_grafico/build/_deps/stb_image-subbuild/stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-mkdir	1a7e7b4f58b31820
+104	5397	7694818881983755	stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-download	61806edabf1982b9
+104	5397	7694818881983755	D:/Processamento_grafico/Processamento_grafico/build/_deps/stb_image-subbuild/stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-download	61806edabf1982b9
+5397	8015	7694818882099666	stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-update	bed17f6ecb110313
+5397	8015	7694818882099666	D:/Processamento_grafico/Processamento_grafico/build/_deps/stb_image-subbuild/stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-update	bed17f6ecb110313
+8017	8121	7694818909224582	stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-patch	9f8b3b48c68c13ee
+8017	8121	7694818909224582	D:/Processamento_grafico/Processamento_grafico/build/_deps/stb_image-subbuild/stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-patch	9f8b3b48c68c13ee
+8121	8228	7694818910304401	stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-configure	8a2577a771bd3b91
+8121	8228	7694818910304401	D:/Processamento_grafico/Processamento_grafico/build/_deps/stb_image-subbuild/stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-configure	8a2577a771bd3b91
+8228	8352	7694818911503058	stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-build	124047b13900f244
+8228	8352	7694818911503058	D:/Processamento_grafico/Processamento_grafico/build/_deps/stb_image-subbuild/stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-build	124047b13900f244
+8353	8477	7694818912791861	stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-install	bfc6a27acd5cdd24
+8353	8477	7694818912791861	D:/Processamento_grafico/Processamento_grafico/build/_deps/stb_image-subbuild/stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-install	bfc6a27acd5cdd24
+8477	8589	7694818913909569	stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-test	72da08e34852f639
+8477	8589	7694818913909569	D:/Processamento_grafico/Processamento_grafico/build/_deps/stb_image-subbuild/stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-test	72da08e34852f639
+8589	8734	7694818915366838	CMakeFiles/stb_image-populate-complete	6c2b8f3608152b62
+8589	8734	7694818915366838	stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-done	6c2b8f3608152b62
+8589	8734	7694818915366838	D:/Processamento_grafico/Processamento_grafico/build/_deps/stb_image-subbuild/CMakeFiles/stb_image-populate-complete	6c2b8f3608152b62
+8589	8734	7694818915366838	D:/Processamento_grafico/Processamento_grafico/build/_deps/stb_image-subbuild/stb_image-populate-prefix/src/stb_image-populate-stamp/stb_image-populate-done	6c2b8f3608152b62

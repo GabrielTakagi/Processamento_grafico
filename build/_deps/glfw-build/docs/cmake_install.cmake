@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/bielk/Desktop/PGCCHIB-main/build/_deps/glfw-src/docs
+# Install script for directory: D:/Processamento_grafico/Processamento_grafico/build/_deps/glfw-src/docs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -38,12 +38,12 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/GLFW" TYPE DIRECTORY FILES "C:/Users/bielk/Desktop/PGCCHIB-main/build/_deps/glfw-build/docs/html")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/GLFW" TYPE DIRECTORY FILES "D:/Processamento_grafico/Processamento_grafico/build/_deps/glfw-build/docs/html")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "C:/Users/bielk/Desktop/PGCCHIB-main/build/_deps/glfw-build/docs/install_local_manifest.txt"
+  file(WRITE "D:/Processamento_grafico/Processamento_grafico/build/_deps/glfw-build/docs/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

@@ -37,13 +37,13 @@ const char *fragmentShaderSource =
     //Inserir variavel cor
     "uniform vec4 inputColor;\n"
     //Criar uma variável de outputs (não é pré-definida como o vertexShader)
-    "out vec4 FragColor;\n"
+    "out vec4 Color;\n"
     //função principal
     "void main()\n"
     "{\n"
         //Setar a variável de output para os próximos processos
         //Vamos deixar o output com a cor laranja
-    "   FragColor = ;\n"
+    "   Color = inputColor;\n"
     "}\n";
 
     GLuint createTriangle(float x0, float y0, float x1, float y1, float x2, float y2){
@@ -150,11 +150,11 @@ int main(){
     GLint colorLoc = glGetUniformLocation(shaderProgram, "inputColor");
     
     std::vector<GLuint> vaoList;
-    vaoList.push_back(createTriangle(-0.9f,  0.8f, -0.7f,  0.4f, -0.5f, 0.8f));
-    vaoList.push_back(createTriangle(-0.4f,  0.7f, -0.2f,  0.3f,  0.0f, 0.7f));
-    vaoList.push_back(createTriangle( 0.1f,  0.6f,  0.3f,  0.2f,  0.5f, 0.6f));
-    vaoList.push_back(createTriangle( 0.6f,  0.5f,  0.8f,  0.1f,  1.0f, 0.5f));
-    vaoList.push_back(createTriangle(-0.3f, -0.5f, -0.1f, -0.9f,  0.1f, -0.5f));
+    vaoList.push_back(createTriangle(-0.9f,  0.8f, -0.7f,  0.5f, -0.5f, 0.8f));
+    vaoList.push_back(createTriangle(0.5f,  0.8f, 0.7f,  0.5f, 0.9f, 0.8f));
+    vaoList.push_back(createTriangle(-0.2f,  0.5f, 0.0f,  0.2f, 0.2f, 0.5f));
+    vaoList.push_back(createTriangle(-0.2f, -0.5f, 0.0f, -0.2f, 0.2f, -0.5f));
+    vaoList.push_back(createTriangle(-0.9f, -0.8f, -0.7f, -0.5f, -0.5f, -0.8f));
     
     while(!glfwWindowShouldClose(window)){
         
@@ -167,7 +167,7 @@ int main(){
             glBindVertexArray(vaoList[i]);
 
             // Define a cor do triângulo i
-            glUniform4f(colorLoc, cores[i][0], cores[i][1], cores[i][2], cores[i][3]);
+            glUniform4f(colorLoc, 0.5f, 0.3f, 1.0f, 1.0f);
 
             glDrawArrays(GL_TRIANGLES, 0, 3);
         }

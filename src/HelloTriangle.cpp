@@ -171,7 +171,6 @@ int main()
 		glPointSize(20);
 
 		glBindVertexArray(VAO); // Conectando ao buffer de geometria
-
 		glUniform4f(colorLoc, 0.0f, 0.0f, 1.0f, 1.0f); // enviando cor para variável uniform inputColor
 
 		// Chamada de desenho - drawcall

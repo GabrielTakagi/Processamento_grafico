@@ -9,6 +9,15 @@
 // GLFW
 #include <GLFW/glfw3.h>
 
+// Cores para cada triângulo (RGBA)
+std::vector<std::vector<float>> cores = {
+    {1.0f, 0.0f, 0.0f, 1.0f}, // vermelho
+    {0.0f, 1.0f, 0.0f, 1.0f}, // verde
+    {0.0f, 0.0f, 1.0f, 1.0f}, // azul
+    {1.0f, 1.0f, 0.0f, 1.0f}, // amarelo
+    {1.0f, 0.0f, 1.0f, 1.0f}  // magenta
+};
+
 const char *vertexShaderSource =
     //Versão do OpenGL (3.3) e core-profile
     "#version 330 core\n"
@@ -25,6 +34,8 @@ const char *vertexShaderSource =
 const char *fragmentShaderSource =
     //Versão do OpenGL (3.3) e core-profile
     "#version 330 core\n"
+    //Inserir variavel cor
+    "uniform vec4 inputColor;\n"
     //Criar uma variável de outputs (não é pré-definida como o vertexShader)
     "out vec4 FragColor;\n"
     //função principal
@@ -32,8 +43,44 @@ const char *fragmentShaderSource =
     "{\n"
         //Setar a variável de output para os próximos processos
         //Vamos deixar o output com a cor laranja
-    "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+    "   FragColor = ;\n"
     "}\n";
+
+    GLuint createTriangle(float x0, float y0, float x1, float y1, float x2, float y2){
+        
+        //Coordenadas dos vértices do triângulo
+        float vertices[] = { x0, y0, x1, y1, x2, y2 };
+
+        //Criando objeto para o VBO e VAO
+        GLuint VBO, VAO;
+
+        //Gerando VBO e VAO com os objetos declarados acima. Recebendo ID
+        glGenVertexArrays(1, &VAO);
+        glGenBuffers(1, &VBO);
+
+        //Ligar o VAO. Ele quem administra a VBO e os vértices
+        glBindVertexArray(VAO);
+
+        //Ligar VBO como um Buffer de Array. Ele quem armazena os vértices
+        glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
+        //Passar o array de vertices criado para nosso VBO
+        glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+        //Instruindo como o VAO de location 0 deve administrar esses vértices passados
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
+
+        //Ativando a instrução dada acima para a VAO de location 0
+        glEnableVertexAttribArray(0);
+
+        //Desvincular VBO para evitar ser modificado (Opcional)
+        glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+        //Desvincular VAO para evitar ser modificado (Opcional)
+        glBindVertexArray(0);
+
+        return VAO;
+    }
 
 int main(){
 
@@ -61,9 +108,9 @@ int main(){
     glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
     glCompileShader(vertexShader);
 
+    //Verificar se o shader foi um sucesso
     int sucessVertex;
-    glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &sucessVertex);
-
+    glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &sucessVertex); 
     if(sucessVertex == false){
         std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED" << std::endl;
 
@@ -78,9 +125,9 @@ int main(){
     glShaderSource(fragmentedShader, 1, &fragmentShaderSource, NULL);
     glCompileShader(fragmentedShader);
 
+    //Verificar se o fragmented foi um sucesso
     int sucessfragmented;
     glGetShaderiv(fragmentedShader, GL_COMPILE_STATUS, &sucessfragmented);
-
     if(sucessfragmented == false){
         std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED" << std::endl;
 
@@ -99,63 +146,39 @@ int main(){
     //deletar vertex e fragment porque temos o program
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentedShader);
+
+    GLint colorLoc = glGetUniformLocation(shaderProgram, "inputColor");
     
-    //Coordenadas dos vértices do triângulo
-    float vertices[] = {
-        -0.5f, -0.5f, 0.0f, // esquerda
-         0.5f, -0.5f, 0.0f, // direita
-         0.0f,  0.5f, 0.0f, // cima
-    };
-
-    //Criando objeto para o VBO e VAO
-    unsigned int VBO, VAO;
-
-    //Gerando VBO e VAO com os objetos declarados acima. Recebendo ID
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
-
-    //Ligar o VAO. Ele quem administra a VBO e os vértices
-    glBindVertexArray(VAO);
-
-    //Ligar VBO como um Buffer de Array. Ele quem armazena os vértices
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-    //Passar o array de vertices criado para nosso VBO
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    //Instruindo como o VAO de location 0 deve administrar esses vértices passados
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-
-    //Ativando a instrução dada acima para a VAO de location 0
-    glEnableVertexAttribArray(0);
-
-    //Desvincular VBO para evitar ser modificado (Opcional)
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-    //Desvincular VAO para evitar ser modificado (Opcional)
-    glBindVertexArray(0);
+    std::vector<GLuint> vaoList;
+    vaoList.push_back(createTriangle(-0.9f,  0.8f, -0.7f,  0.4f, -0.5f, 0.8f));
+    vaoList.push_back(createTriangle(-0.4f,  0.7f, -0.2f,  0.3f,  0.0f, 0.7f));
+    vaoList.push_back(createTriangle( 0.1f,  0.6f,  0.3f,  0.2f,  0.5f, 0.6f));
+    vaoList.push_back(createTriangle( 0.6f,  0.5f,  0.8f,  0.1f,  1.0f, 0.5f));
+    vaoList.push_back(createTriangle(-0.3f, -0.5f, -0.1f, -0.9f,  0.1f, -0.5f));
     
     while(!glfwWindowShouldClose(window)){
         
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-
         glClear(GL_COLOR_BUFFER_BIT);
 
         glUseProgram(shaderProgram);
-        glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        
+        for (size_t i = 0; i < vaoList.size(); ++i){
+            glBindVertexArray(vaoList[i]);
+
+            // Define a cor do triângulo i
+            glUniform4f(colorLoc, cores[i][0], cores[i][1], cores[i][2], cores[i][3]);
+
+            glDrawArrays(GL_TRIANGLES, 0, 3);
+        }
+
 
         glfwSwapBuffers(window);
-
         glfwPollEvents();
-
     }
 
-    //Excluindo VAO.
-    glDeleteVertexArrays(1, &VAO);
-
-    //Excluindo VBO.
-    glDeleteBuffers(1, &VBO);
+    for (auto vao : vaoList)
+        glDeleteVertexArrays(1, &vao);
 
     //Exlcuindo Program.
     glDeleteProgram(shaderProgram);
